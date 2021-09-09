@@ -3,5 +3,10 @@
 {% block title %} {{ title }} {% endblock %}
 
 {% block content %}
-<h1>{{ content }} </h1>
+    {% for joke in jokes %}
+        <h1>{{ joke.title }}</h1>
+        <h2>{{ joke.content }}</h2>
+        <p>{{ joke.time_create }}</p>
+        <hr> <br>
+    {% endfor %}
 {% endblock %}

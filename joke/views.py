@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from joke.models import Joke
 
 content = 'Some content'
 
@@ -8,7 +9,8 @@ content = 'Some content'
 def index(request):
     # return HttpResponse('main page')
     title = 'Main page'
-    return render(request, 'joke/index.html', {'title': title, 'content': content})
+    jokes = Joke.objects.all()
+    return render(request, 'joke/index.html', {'jokes': jokes, 'title': title, 'content': content})
 
 
 def randomjoke(request, jokeid):
