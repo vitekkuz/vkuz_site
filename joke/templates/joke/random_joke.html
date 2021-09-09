@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
+{% extends 'joke/base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
 <h1> Joke: {{ jokeid }}</h1>
 <h2> {{ content }} </h2>
-</body>
-</html>
+{% endblock %}
+
